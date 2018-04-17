@@ -53,12 +53,12 @@ namespace Dsd.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Xamarin.Forms.Forms.Init(e);
-
+                Xamarin.Forms.DependencyService.Register<Counter>();
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }
-
+               
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
@@ -70,6 +70,7 @@ namespace Dsd.UWP
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
             }
+           
             // Ensure the current window is active
             Window.Current.Activate();
         }
